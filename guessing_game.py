@@ -69,14 +69,16 @@ def start_game():
                         raise ValueError("Please input a valid number.")
 
                     guess = int(guess)
-                    guesses += 1
                     if guess < rangeLow or guess > rangeHigh:
                         raise ValueError("Your guess is outside of the range.")
                     elif guess < target:
+                        guesses += 1
                         print("It's higher.")
                     elif guess > target:
+                        guesses += 1
                         print("It's lower.")
                     else:
+                        guesses += 1
                         print(
                             f"You got it! Nice job, it took you {guesses} guesses.")
                         if bestScore == 0 or guesses < bestScore:
